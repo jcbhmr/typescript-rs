@@ -1,0 +1,11 @@
+[package]
+name = "typescript-windows-x86_64"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+flate2 = "1.0.30"
+serde_json = "1.0.118"
+tar = "0.4.41"
+vfs = "0.12.0"
+xshell = "0.2.6"

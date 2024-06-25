@@ -1,0 +1,14 @@
+[package]
+name = "typescript-sys"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+flate2 = "1.0.30"
+rquickjs = { version = "0.6.2", features = ["macro", "loader"] }
+tar = "0.4.41"
+vfs = "0.12.0"
+
+[dev-dependencies]
+serde_json = "1.0.118"
+xshell = "0.2.6"
