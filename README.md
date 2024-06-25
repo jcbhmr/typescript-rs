@@ -1,25 +1,13 @@
-# typescript-rs
-🟦 TypeScript project exposed to Rust
+# TypeScript for Rust
 
-## How it works
+🟦 TypeScript compiler API bindings & binaries for Rust
 
-```mermaid
-flowchart TD
-    AA["typescript (npm)"] --> A["typescript-X.Y.Z.tgz"] --> B["typescript-sys"]
-    C["QuickJS"] --> D["rquickjs"] --> E["Node.js env shim"]
-    EE["CommonJS shim"] --> E
-    EEE["Node.js API shims"] --> E
-    E --> B
-    B --> F["typescript (Cargo)"]
-    FF["typescript-$OS-$ARCH"] --> F
-    AA --> G["Node.js SEA tsc"]
-    AA --> H["Node.js SEA tsserver"]
-    G --> FF
-    H --> FF
+## Installation
+
+```sh
+cargo add typescript2
 ```
 
-1. We grab the `typescript-X.Y.Z.tgz` tarball from the npm registry. This is the actual TypeScript project code.
-2. In typescript-sys, we wrap the tarball from npm in a minimal Node.js-like CommonJS-like environment using QuickJS via rquickjs.
-3. We expose 
+<sup>The crates.io package is called `typescript2` because `typescript` was taken.</sup>
 
 ## Development
