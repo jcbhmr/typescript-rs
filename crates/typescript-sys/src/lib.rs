@@ -1,19 +1,3 @@
-#[cfg(test)]
-mod tests {
-    const TYPESCRIPT_VERSION: &str = "5.5.2";
-
-    #[test]
-    fn typescript_tgz() -> Result<(), Box<dyn std::error::Error>> {
-        let sh = xshell::Shell::new()?;
-        eprintln!("TYPESCRIPT_VERSION={:?}", TYPESCRIPT_VERSION);
-        let output = xshell::cmd!(sh, "npm pack typescript@{TYPESCRIPT_VERSION}").output()?;
-        let out = std::str::from_utf8(&output.stdout)?.trim();
-        let dest = "typescript.tgz";
-        std::fs::rename(out, dest)?;
-        Err("successful codegen. rerun without codegen.".into())
-    }
-}
-
 const TYPESCRIPT_TGZ: &[u8] = include_bytes!("../typescript.tgz");
 
 fn gunzip(bytes: &[u8]) -> Vec<u8> {

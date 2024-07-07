@@ -6,10 +6,21 @@ name = "typescript2"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+name = "typescript"
+
+[features]
+default = ["serde"]
+
 [dependencies]
 dirs = "5.0.1"
+serde = { version = "1.0.204", features = ["derive"], optional = true }
 
 [target.'cfg(all(target_os = "linux", target_arch = "x86_64"))'.dependencies]
 typescript-linux-x86_64 = { path = "crates/typescript-linux-x86_64" }
 [target.'cfg(all(target_os = "windows", target_arch = "x86_64"))'.dependencies]
 typescript-windows-x86_64 = { path = "crates/typescript-windows-x86_64" }
+
+[dev-dependencies]
+serde_json = "1.0.120"
+xshell = "0.2.6"
