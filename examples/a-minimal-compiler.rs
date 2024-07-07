@@ -42,29 +42,29 @@
 //!
 //! </details>
 
-use typescript as ts;
+// use typescript as ts;
 
-fn compile(file_names: &[String], options: ts::CompilerOptions) -> Result<(), Box<dyn std::error::Error>> {
-    let program = ts::create_program(file_names, options);
-    let emit_result = program.emit();
+// fn compile(file_names: &[String], options: ts::CompilerOptions) -> Result<(), Box<dyn std::error::Error>> {
+//     let program = ts::create_program(file_names, options);
+//     let emit_result = program.emit();
 
-    // TODO
+//     // TODO
 
-    let exit_code = if emit_result.emit_skipped { 1 } else { 0 };
-    println!("Process exiting with code '{exit_code}'.");
-    std::process::exit(exit_code);
-}
+//     let exit_code = if emit_result.emit_skipped { 1 } else { 0 };
+//     println!("Process exiting with code '{exit_code}'.");
+//     std::process::exit(exit_code);
+// }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    compile(
-        std::env::args().skip(1).collect::<Vec<_>>().as_slice(),
-        ts::CompilerOptions {
-            no_emit_on_error: true,
-            no_implicit_any: true,
-            target: ts::ScriptTarget::ES5,
-            module: ts::ModuleKind::CommonJS,
-            ..Default::default()
-        },
-    )?;
+    // compile(
+    //     std::env::args().skip(1).collect::<Vec<_>>().as_slice(),
+    //     ts::CompilerOptions {
+    //         no_emit_on_error: true,
+    //         no_implicit_any: true,
+    //         target: ts::ScriptTarget::ES5,
+    //         module: ts::ModuleKind::CommonJS,
+    //         ..Default::default()
+    //     },
+    // )?;
     Ok(())
 }
